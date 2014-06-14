@@ -4,8 +4,8 @@
     <title>GoWith - Go Anywhere With Anyone</title>
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="common/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="common/combined.css" type="text/css">
+    <link rel="stylesheet" href="/common/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/common/combined.css" type="text/css">
 </head>
 <body>
 <div class="wrapper">
@@ -24,15 +24,16 @@
         </ul>
     </nav>
 
-    <div ng-view ></div>
+    <div ng-view class="{{view}}"></div>
 
 </div>
 <script src="/common/angular.min.js"></script>
 <script src="/common/angular-resource.min.js"></script>
 <script src="/common/angular-route.min.js"></script>
 <script src="/common/app.js"></script>
-<script src="main/ctrlMain.js"></script>
-<script src="event/ctrlEvent.js"></script>
+<script src="/main/ctrlMain.js"></script>
+<script src="/event/ctrlEvent.js"></script>
+<script src="/events/ctrlEvents.js"></script>
 
 </body>
 </html>

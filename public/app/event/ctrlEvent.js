@@ -1,5 +1,5 @@
-app.controller('eventCtrl', function($scope){
-
+app.controller('eventCtrl', function($scope, $route){
+    $scope.view = $route.current.controllerAs;
     $scope.user = "sharonsitti";
 
     $scope.messages = [
