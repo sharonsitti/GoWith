@@ -1,0 +1,49 @@
+@import "variables";
+
+body {
+    background-color: $textColorLight;
+    font-family: 'Lato', sans-serif;
+    color: $textColorDark;
+    font-size: 16px;
+
+    .clearfix {
+        clear: both;
+    }
+
+    .wrapper {
+        width: 100%;
+        margin: auto;
+        background-color: $textColorLight;
+
+        nav {
+            background-color: $navBGColor;
+            color: $textColorLight;
+            margin: auto;
+
+            .left {
+                float: left;
+            }
+            .right {
+                float: right;
+                text-align: right;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    text-align: center;
+                    padding: 15px 10px 15px 10px;
+                    cursor: pointer;
+
+                    &.selected {
+                        border-top: solid 3px $btnBgColor;
+                        background-color: $navSelectedBgColor;
+                    }
+                }
+            }
+        }
+    }
+}
+

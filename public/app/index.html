@@ -2,20 +2,37 @@
 <html ng-app="app">
 <head>
     <title>GoWith - Go Anywhere With Anyone</title>
-    <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="/app/style.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="common/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="common/combined.css" type="text/css">
 </head>
-<body class="main">
+<body>
+<div class="wrapper">
+    <nav class="row">
+        <ul class="left list-unstyled list-inline col-md-10">
+            <li class="selected">Home</li>
+            <li>Discover</li>
+            <li>Create</li>
+            <li>My Buddies</li>
+            <li>Help</li>
+        </ul>
 
-    <div ng-view></div>
+        <ul class="right list-unstyled list-inline col-md-2">
+            <li>Login</li>
+            <li>EN</li>
+        </ul>
+    </nav>
 
+    <div ng-view ></div>
 
-    <script src="../vendor/angular/angular.min.js"></script>
-    <script src="../vendor/angular-resource/angular-resource.min.js"></script>
-    <script src="../vendor/angular-route/angular-route.min.js"></script>
-    <script src="/app/app.js"></script>
-    <script src="/app/main/ctrlMain.js"></script>
-    <script src="/app/event/ctrlEvent.js"></script>
+</div>
+<script src="/common/angular.min.js"></script>
+<script src="/common/angular-resource.min.js"></script>
+<script src="/common/angular-route.min.js"></script>
+<script src="/common/app.js"></script>
+<script src="main/ctrlMain.js"></script>
+<script src="event/ctrlEvent.js"></script>
 
 </body>
 </html>
