@@ -5784,17 +5784,30 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
+html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; }
+
 body {
   background-color: #fffff7;
   font-family: 'Lato', sans-serif;
   color: #1b1b1b;
-  font-size: 16px; }
+  font-size: 17px;
+  position: relative;
+  min-height: 100%; }
   body .clearfix {
     clear: both; }
   body .wrapper {
     width: 100%;
     margin: auto;
     background-color: #fffff7; }
+    body .wrapper .logo {
+      margin-right: 50px;
+      float: left; }
+      body .wrapper .logo h1 {
+        margin: 0;
+        margin-top: 10px; }
     body .wrapper nav {
       background-color: #32364a;
       color: #fffff7;
@@ -5814,8 +5827,100 @@ body {
           body .wrapper nav ul li.selected {
             border-top: solid 3px #a51000;
             background-color: #292d3e; }
+  body .footer {
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    background-color: #32364a;
+    color: #fffff7;
+    padding: 20px; }
+  body .userEntity .img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    margin: auto;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.8); }
+  body .userEntity span {
+    font-size: 14px; }
 
 
+.event .header {
+  width: 103%;
+  margin-left: -15px;
+  height: 300px;
+  position: relative;
+  overflow: hidden; }
+  .event .header .imgWrapper img {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    margin-left: -410px; }
+    .event .header .imgWrapper img.blurred {
+      z-index: 0;
+      width: 100%;
+      left: 0;
+      margin-left: 0;
+      opacity: 0.3;
+      -webkit-filter: blur(10px);
+      -moz-filter: blur(10px);
+      -o-filter: blur(10px);
+      -ms-filter: blur(10px);
+      filter: blur(10px); }
+  .event .header .titleWrapper {
+    background-color: #a51000;
+    width: 100%;
+    padding: 10px 10px 10px 15px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    position: absolute;
+    bottom: 0; }
+    .event .header .titleWrapper h1, .event .header .titleWrapper h2 {
+      display: inline-block;
+      color: #fffff7;
+      margin: 0; }
+    .event .header .titleWrapper h1 {
+      font-size: 30px; }
+      .event .header .titleWrapper h1:after {
+        display: inline-block;
+        content: "\f105";
+        font-size: 30px;
+        font-family: FontAwesome;
+        vertical-align: middle;
+        padding: 0 10px 0 15px; }
+    .event .header .titleWrapper h2 {
+      font-size: 20px; }
+.event .social {
+  padding-left: 80px; }
+  .event .social .attendees {
+    width: 60%;
+    height: 73px;
+    overflow: hidden; }
+    .event .social .attendees.expanded {
+      height: auto;
+      overflow: auto; }
+    .event .social .attendees li {
+      float: left;
+      margin-right: 10px;
+      text-align: center; }
+.event .conversation li:nth-child(odd) {
+  background-color: #e4e4e4; }
+.event .conversation li .userWrapper {
+  display: inline-block;
+  text-align: center; }
+.event .conversation li .messageWrapper {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 10px;
+  max-width: 70%; }
+.event .conversation li input[type=text] {
+  vertical-align: top;
+  margin-top: 20px;
+  margin-left: 10px;
+  width: 87%;
+  display: inline-block; }
 
 
 .main .hero {

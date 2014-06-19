@@ -1,32 +1,44 @@
 <div class="container-fluid">
-    <div class="row">
-        <section class="col-md-12">
+
+    <section class="header">
+        <div class="imgWrapper">
+            <img class="blurred"
+                 ng-src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/s843x403/10343006_529629823809918_2311844075284749423_n.jpg">
             <img ng-src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/s843x403/10343006_529629823809918_2311844075284749423_n.jpg">
+        </div>
+
+        <hgroup class="titleWrapper">
             <h1>Block Party</h1>
-            <h3>1/1/2015 22:00 @ The Block, Tel Aviv</h3>
-        </section>
-    </div>
+
+            <h2>1/1/2015 22:00 @ The Block, Tel Aviv</h2>
+        </hgroup>
+    </section>
 
     <div class="row">
-        <section class="event col-md-8">
-            <p>
+        <section class="event col-md-6">
+            <article>
                 This weekend everybody going to celebrate till they drop!<br/>
                 Whomever you usually cuddle with, or where and when you׳re doing it is really up to you...<br/>
-                We're going to have the happiest holiday love !! Proud and full of smiles & hugs we're able to love in
+                We're going to have the happiest holiday love !! Proud and full of smiles & hugs we're able to love
+                in
                 any
                 color, shade, sex, or gender, without any barriers or bullshit.<br/>
                 Yalla Yalla we are living it up tel aviv!! Love or leave!<br/><br>
 
-                right After we're done partying at the parade, we will meet up for a crazy 24 hour celebration, at the
+                right After we're done partying at the parade, we will meet up for a crazy 24 hour celebration, at
+                the
                 gorgeous space of ISMI SALMA.<br/><br/>
 
-                On that second floor, we'll reach a whole other level, and you will be able to join it as soon as the
+                On that second floor, we'll reach a whole other level, and you will be able to join it as soon as
+                the
                 sun
                 sets and until it sets again.<br/><br/>
 
-                All passengers are welcome aboard our orient express train, leaving shortly from Tel aviv toward Berlin.
+                All passengers are welcome aboard our orient express train, leaving shortly from Tel aviv toward
+                Berlin.
                 The
-                train will stop in bizarre and exotic stops on the way, yet our crew cannot be held responsible to where
+                train will stop in bizarre and exotic stops on the way, yet our crew cannot be held responsible to
+                where
                 they will actually end up... <Br><br/>
 
                 On the constantly pulsing lineup,the best dj's telaviv has to offer: <br/><br/>
@@ -48,47 +60,43 @@
                 Flowing alcohol,<br/>
                 Rainbow color surprises.<br>
                 The party you've never experienced, yet we've all been waiting for!
-            </p>
+            </article>
 
         </section>
 
-        <section class="attendees col-md-4">
+        <section class="social col-md-6">
+            <h3>{{attendees.length}} people are going to Block Party</h3>
 
-            <ul class="list-unstyled">
-                <li>
-                    <div class="attendee you" ng-class="{going: isGoing}">
-                        <img ng-src="http://graph.facebook.com/sharonsitti/picture"><br/><br/>
-                        <button class="btn btn-primary" ng-hide="isGoing" ng-click="toggleGoing()">Go With</button>
-                        <button class="btn btn-primary btn-success" ng-show="isGoing" ng-click="toggleGoing()">Going</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="attendee">
-                        <img ng-src="http://graph.facebook.com/dariafrost/picture"><br/>
-                        <span>Daria Frost</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="attendee">
-                        <img ng-src="http://graph.facebook.com/zoebronshteyn/picture"><br/>
-                        <span>Zoe Bronshteyn</span>
-                    </div>
+            <ul class="attendees list-unstyled" ng-class="{expanded: !!isAttendeesExpanded}">
+                <li ng-repeat="user in attendees">
+                    <user-entity fb-username="user.fbUsername" first-name="user.firstName"></user-entity>
                 </li>
             </ul>
+            <a href="#" ng-click="toggle('isAttendeesExpanded')">
+                <span ng-show="!isAttendeesExpanded">Show All</span>
+                <span ng-show="!!isAttendeesExpanded">Show Less</span>
+            </a>
             <br style="clear: both"><br>
+            <button class="btn btn-primary btn-lg" ng-click="toggle('isGoing')">Join the fun, GoWith!</button>
+
             <div class="conversation" ng-hide="!isGoing">
                 <ul class="list-unstyled">
                     <li ng-repeat="message in messages">
-                        <div>
-                            <img ng-src="http://graph.facebook.com/{{message.name}}/picture">
-                            <span>{{message.text}}</span>
+                        <div class="userWrapper">
+                            <user-entity fb-username="message.user.fbUsername"
+                                         first-name="message.user.firstName"></user-entity>
                         </div>
+                        <div class="messageWrapper">{{message.text}}</div>
+
                     </li>
                     <li>
-                        <div>
-                            <img ng-src="http://graph.facebook.com/sharonsitti/picture">
-                            <input type="text" ng-enter="sendMessage" ng-model="message" placeholder="Send a message to event group"/>
+                        <div class="userWrapper">
+                            <user-entity fb-username="currentUser.fbUsername"
+                                         first-name="currentUser.firstName"></user-entity>
                         </div>
+                        <input type="text" ng-enter="sendMessage" class="form-control" ng-model="message"
+                               placeholder="Send a message to event group"/>
+
                     </li>
                 </ul>
             </div>

@@ -1,3 +1,114 @@
-.event {
+@import "../common/variables";
 
+.event {
+    .header {
+        width: 103%;
+        margin-left: -15px;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+
+        .imgWrapper {
+
+            img {
+                position: absolute;
+                z-index: 1;
+                left: 50%;
+                margin-left: -410px;
+
+                &.blurred {
+                    z-index: 0;
+                    width: 100%;
+                    left: 0;
+                    margin-left: 0;
+                    opacity: 0.3;
+                    @include filter-blur(10px)
+                }
+            }
+        }
+
+        .titleWrapper {
+            background-color: $btnBgColor;
+            width: 100%;
+            padding: 10px 10px 10px 15px;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+            position: absolute;
+            bottom: 0;
+
+            h1, h2 {
+                display: inline-block;
+                color: $textColorLight;
+                margin: 0;
+            }
+
+            h1 {
+                font-size: 30px;
+                &:after {
+                    display: inline-block;
+                    content: "\f105";
+                    font-size: 30px;
+                    font-family: FontAwesome;
+                    vertical-align: middle;
+                    padding: 0 10px 0 15px;
+                }
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+
+    }
+
+    .social {
+        padding-left: 80px;
+        .attendees {
+            width: 60%;
+            height: 73px;
+            overflow: hidden;
+            &.expanded {
+                height: auto;
+                overflow: auto;
+            }
+
+            li {
+                float: left;
+                margin-right: 10px;
+                text-align: center;
+
+            }
+        }
+    }
+
+    .conversation {
+        li {
+
+            &:nth-child(odd) {
+                background-color: #e4e4e4;
+            }
+
+            .userWrapper {
+                display: inline-block;
+                text-align: center;
+            }
+
+            .messageWrapper {
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 10px;
+                margin-left: 10px;
+                max-width: 70%;
+            }
+
+            input[type=text] {
+                vertical-align: top;
+                margin-top: 20px;
+                margin-left: 10px;
+                width: 87%;
+                display: inline-block;
+            }
+        }
+    }
 }

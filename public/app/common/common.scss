@@ -1,10 +1,18 @@
 @import "variables";
 
+html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: $textColorLight;
     font-family: 'Lato', sans-serif;
     color: $textColorDark;
-    font-size: 16px;
+    font-size: 17px;
+    position: relative;
+    min-height: 100%;
 
     .clearfix {
         clear: both;
@@ -14,6 +22,15 @@ body {
         width: 100%;
         margin: auto;
         background-color: $textColorLight;
+
+        .logo {
+            margin-right: 50px;
+            float: left;
+            h1 {
+                margin: 0;
+                margin-top: 10px;
+            }
+        }
 
         nav {
             background-color: $navBGColor;
@@ -43,6 +60,33 @@ body {
                     }
                 }
             }
+        }
+    }
+
+    .footer {
+        width: 100%;
+        //        position: absolute;
+        bottom: 0;
+        text-align: center;
+        background-color: $navBGColor;
+        color: $textColorLight;
+        padding: 20px;
+        //        box-sizing: content-box;
+
+    }
+
+    .userEntity {
+        .img {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-repeat: no-repeat;
+            margin: auto;
+            box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.8);
+        }
+
+        span {
+            font-size: 14px;
         }
     }
 }

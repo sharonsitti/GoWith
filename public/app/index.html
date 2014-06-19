@@ -10,14 +10,19 @@
 <body>
 <div class="wrapper">
     <nav class="row">
-        <ul class="left list-unstyled list-inline col-md-10">
-            <li class="selected">Home</li>
-            <li>Discover</li>
-            <li>Create</li>
-            <li>My Buddies</li>
-            <li>Help</li>
-        </ul>
 
+        <div class="col-md-10">
+            <div class="logo">
+                <h1>GoWith</h1>
+            </div>
+            <ul class="left list-unstyled list-inline col-md-10">
+                <li class="selected">Home</li>
+                <li>Discover</li>
+                <li>Create</li>
+                <li>My Buddies</li>
+                <li>Help</li>
+            </ul>
+        </div>
         <ul class="right list-unstyled list-inline col-md-2">
             <li>Login</li>
             <li>EN</li>
@@ -25,15 +30,21 @@
     </nav>
 
     <div ng-view class="{{view}}"></div>
-
 </div>
+
+<section class="footer">
+    &copy; All rights reserved to Go With.
+</section>
+
 <script src="/common/angular.min.js"></script>
 <script src="/common/angular-resource.min.js"></script>
 <script src="/common/angular-route.min.js"></script>
 <script src="/common/app.js"></script>
+<script src="/directives/userEntity.js"></script>
 <script src="/main/ctrlMain.js"></script>
 <script src="/event/ctrlEvent.js"></script>
 <script src="/events/ctrlEvents.js"></script>
+
 
 </body>
 </html>
