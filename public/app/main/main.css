@@ -1,64 +1,16 @@
-.main .hero {
-  background-color: #292d3e;
-  background-image: url("/assets/images/2.JPG");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 20%;
-  height: 300px;
-  margin: auto; }
-  .main .hero header {
-    margin-top: 90px;
-    text-align: left;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
-    margin-left: 20px;
-    color: #fffff7; }
-    .main .hero header h1 {
-      font-size: 35px;
-      margin: 0 0 5px 0; }
-    .main .hero header h2 {
-      font-size: 22px;
-      margin: 0; }
-    .main .hero header button {
-      margin-top: 10px; }
-.main .walkthrough {
-  background-color: #a51000;
-  margin: auto;
-  color: #fffff7;
-  padding: 10px 0 10px 0;
-  box-shadow: 0px -4px 18px rgba(0, 0, 0, 0.5); }
-  .main .walkthrough .fa {
-    display: block;
-    margin: auto;
-    font-size: 40px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-    width: 40px; }
-    .main .walkthrough .fa.gowith {
-      width: 80px; }
-  .main .walkthrough h3 {
-    text-align: center;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
-  .main .walkthrough p {
-    font-size: 17px;
-    width: 70%;
-    margin: auto;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
-  .main .walkthrough div {
-    min-height: 170px; }
-    .main .walkthrough div:after {
-      display: block;
-      content: "\f105";
-      font-size: 56px;
-      font-family: FontAwesome;
-      top: 50%;
-      position: absolute;
-      margin-top: -30px;
-      left: 0; }
-  .main .walkthrough div:first-child:after {
-    display: none; }
 .main .discovery {
   background-color: #fffff7;
-  margin: auto;
-  padding-top: 20px; }
+  margin: auto; }
+  .main .discovery .thumbnail img {
+    max-height: 160px;
+    width: 100%; }
+  .main .discovery .thumbnail h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .main .discovery .thumbnail p {
+    max-height: 50px;
+    overflow: hidden; }
 .main .search {
   text-align: center;
   color: #a51000;

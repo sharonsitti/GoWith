@@ -1,75 +1,22 @@
 <div class="container-fluid">
-
-    <section class="header">
-        <div class="imgWrapper">
-            <img class="blurred"
-                 ng-src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/s843x403/10343006_529629823809918_2311844075284749423_n.jpg">
-            <img ng-src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/s843x403/10343006_529629823809918_2311844075284749423_n.jpg">
-        </div>
-
-        <hgroup class="titleWrapper">
-            <h1>Block Party</h1>
-
-            <h2>1/1/2015 22:00 @ The Block, Tel Aviv</h2>
-        </hgroup>
-    </section>
-
     <div class="row">
-        <section class="event col-md-6">
-            <article>
-                This weekend everybody going to celebrate till they drop!<br/>
-                Whomever you usually cuddle with, or where and when you׳re doing it is really up to you...<br/>
-                We're going to have the happiest holiday love !! Proud and full of smiles & hugs we're able to love
-                in
-                any
-                color, shade, sex, or gender, without any barriers or bullshit.<br/>
-                Yalla Yalla we are living it up tel aviv!! Love or leave!<br/><br>
-
-                right After we're done partying at the parade, we will meet up for a crazy 24 hour celebration, at
-                the
-                gorgeous space of ISMI SALMA.<br/><br/>
-
-                On that second floor, we'll reach a whole other level, and you will be able to join it as soon as
-                the
-                sun
-                sets and until it sets again.<br/><br/>
-
-                All passengers are welcome aboard our orient express train, leaving shortly from Tel aviv toward
-                Berlin.
-                The
-                train will stop in bizarre and exotic stops on the way, yet our crew cannot be held responsible to
-                where
-                they will actually end up... <Br><br/>
-
-                On the constantly pulsing lineup,the best dj's telaviv has to offer: <br/><br/>
-
-                Adi Shabat (block)<br/>
-                Narkin Templer (crack)<br/>
-                Dana Freeman (boys party)<br/>
-                Dor Zipori (deli)<br/>
-                Barbarabr <Br/>
-                Charlie (t.v out)<br/>
-                Oron Kbr <Br/>
-                Dan Orbach <br/>
-                Mz.Sunday.Luv (live!)<br/><br/>
-
-                50 nis for entrance and exit… and entrance... and entrance again and again during all hours of the
-                party!<br/><br/>
-
-                Extravagant decor,<br/>
-                Flowing alcohol,<br/>
-                Rainbow color surprises.<br>
-                The party you've never experienced, yet we've all been waiting for!
+        <section class="details col-md-6">
+            <article class="content-box">
+                <img src="{{eventData.cover}}">
+                <header>
+                    <h2 ng-bind="eventData.title"></h2>
+                    <h3>{{eventData.date | date:'medium'}} @ {{eventData.location}}</h3>
+                </header>
+                <p ng-bind="eventData.description"></p>
             </article>
-
         </section>
 
         <section class="social col-md-6">
-            <h3>{{attendees.length}} people are going to Block Party</h3>
+            <h3>{{attendees.length}} people are going to {{eventData.title}}</h3>
 
             <ul class="attendees list-unstyled" ng-class="{expanded: !!isAttendeesExpanded}">
                 <li ng-repeat="user in attendees">
-                    <user-entity fb-username="user.fbUsername" first-name="user.firstName"></user-entity>
+                    <user-entity fb-id="user.fbId" first-name="user.firstName"></user-entity>
                 </li>
             </ul>
             <a href="#" ng-click="toggle('isAttendeesExpanded')">
@@ -77,13 +24,16 @@
                 <span ng-show="!!isAttendeesExpanded">Show Less</span>
             </a>
             <br style="clear: both"><br>
-            <button class="btn btn-primary btn-lg" ng-click="toggle('isGoing')">Join the fun, GoWith!</button>
+            <button class="btn btn-lg" ng-click="clickGoWith()" ng-class="{'btn-primary': !currentUser.isGoing, 'btn-success': currentUser.isGoing}">
+                <span ng-show="!currentUser.isGoing">Click to GoWith</span>
+                <span ng-show="currentUser.isGoing">You're going</span>
+            </button>
 
             <div class="conversation" ng-hide="!isGoing">
                 <ul class="list-unstyled">
                     <li ng-repeat="message in messages">
                         <div class="userWrapper">
-                            <user-entity fb-username="message.user.fbUsername"
+                            <user-entity fb-id="message.user.fbId"
                                          first-name="message.user.firstName"></user-entity>
                         </div>
                         <div class="messageWrapper">{{message.text}}</div>
@@ -91,7 +41,7 @@
                     </li>
                     <li>
                         <div class="userWrapper">
-                            <user-entity fb-username="currentUser.fbUsername"
+                            <user-entity fb-id="currentUser.fbId"
                                          first-name="currentUser.firstName"></user-entity>
                         </div>
                         <input type="text" ng-enter="sendMessage" class="form-control" ng-model="message"
@@ -100,7 +50,6 @@
                     </li>
                 </ul>
             </div>
-
         </section>
     </div>
 </div>

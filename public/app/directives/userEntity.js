@@ -3,7 +3,7 @@ app.directive('userEntity', function() {
         restrict: 'E',
         replace: true,
         scope: {
-            fbUsername: '=',
+            fbId: '=',
             firstName: '='
         },
         templateUrl: '/directives/partials/userEntity.html',

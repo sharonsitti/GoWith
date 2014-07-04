@@ -1,65 +1,31 @@
 @import "../common/variables";
 
 .event {
-    .header {
-        width: 103%;
-        margin-left: -15px;
-        height: 300px;
-        position: relative;
-        overflow: hidden;
 
-        .imgWrapper {
+    .details {
+        article {
 
             img {
-                position: absolute;
-                z-index: 1;
-                left: 50%;
-                margin-left: -410px;
-
-                &.blurred {
-                    z-index: 0;
-                    width: 100%;
-                    left: 0;
-                    margin-left: 0;
-                    opacity: 0.3;
-                    @include filter-blur(10px)
+                width: 100%;
+                max-height: 200px;
+            }
+            header {
+                margin-bottom: 10px;
+                h2, h3 {
+                    padding: 0;
+                    margin: 0;
                 }
-            }
-        }
 
-        .titleWrapper {
-            background-color: $btnBgColor;
-            width: 100%;
-            padding: 10px 10px 10px 15px;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-            position: absolute;
-            bottom: 0;
-
-            h1, h2 {
-                display: inline-block;
-                color: $textColorLight;
-                margin: 0;
-            }
-
-            h1 {
-                font-size: 30px;
-                &:after {
-                    display: inline-block;
-                    content: "\f105";
+                h2 {
                     font-size: 30px;
-                    font-family: FontAwesome;
-                    vertical-align: middle;
-                    padding: 0 10px 0 15px;
+                    margin-bottom: 5px;
+                }
+
+                h3 {
+                    font-size: 20px;
                 }
             }
-
-            h2 {
-                font-size: 20px;
-            }
         }
-
     }
 
     .social {
@@ -111,4 +77,5 @@
             }
         }
     }
+
 }

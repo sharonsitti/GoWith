@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>GoWith - Go Anywhere With Anyone</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/common/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/common/combined.css" type="text/css">
+    {{#if events}}
+        <script type="text/javascript">
+            events = {{{events}}};
+        </script>
+    {{/if}}
+</head>
+<body>
+<div class="wrapper">
+    <section class="hero">
+        <div class="imgContainer">
+            <header>
+                <img src="/assets/images/logo.png" alt=""/>
+                <h2>Never miss out on anything just because you're flying solo!</h2>
+            </header>
+        </div>
+
+        <section class="walkthrough row">
+            <div class="col-md-4">
+                <i class="fa fa-search"></i>
+                <h3>Find an Event</h3>
+                <p>Don't sit around and sulk! Find a fun event you'd like to attend, or create your own.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-users"></i>
+                <h3>Join Group</h3>
+                <p>Join others who are looking for someone to go with to that event.</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa gowith">GW</span>
+                <h3>Go With</h3>
+                <p>Set up a meeting place and time, and enjoy the event with your new found buddies!</p>
+            </div>
+        </section>
+    </section>
+
+    <div ng-view class="\{{view}}" autoscroll="true"></div>
+</div>
+
+<section class="footer">
+    &copy; All rights reserved to Go With.
+</section>
+
+<script src="/common/angular.min.js"></script>
+<script src="/common/angular-resource.min.js"></script>
+<script src="/common/angular-route.min.js"></script>
+<script src="/common/app.js"></script>
+<script src="/services/fbService.js"></script>
+<script src="/directives/userEntity.js"></script>
+<script src="/main/ctrlMain.js"></script>
+<script src="/event/ctrlEvent.js"></script>
+<script src="/events/ctrlEvents.js"></script>
+
+</body>
+</html>

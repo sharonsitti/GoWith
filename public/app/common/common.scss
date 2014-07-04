@@ -7,8 +7,8 @@ html {
 }
 
 body {
-    background-color: $textColorLight;
-    font-family: 'Lato', sans-serif;
+    background-color: $pageBgColor;
+    font-family: 'Lato', Arial, sans-serif;
     color: $textColorDark;
     font-size: 17px;
     position: relative;
@@ -16,6 +16,16 @@ body {
 
     .clearfix {
         clear: both;
+    }
+
+    .content-box {
+        display: block;
+        padding: 4px;
+        margin-bottom: 20px;
+        line-height: 1.42857143;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
     }
 
     .wrapper {
@@ -60,6 +70,93 @@ body {
                     }
                 }
             }
+        }
+
+
+        .hero {
+            background-color: $navSelectedBgColor;
+            background-image: url('/assets/images/2.JPG');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 20%;
+            height: 400px;
+            margin: auto;
+            margin-bottom: 20px;
+            position: relative;
+            border: solid 1px transparent;
+
+            header {
+                margin-top: 20px;
+                text-align: left;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+                margin-left: 20px;
+                color: $textColorLight;
+
+                h2 {
+                    font-size: 25px;
+                    margin-top: 15px;
+                    margin-left: 5px;
+                }
+
+            }
+
+        }
+
+        .walkthrough {
+            position:  absolute;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.3);
+            box-shadow: 0px -3px 22px rgba(0,0,0,0.4);
+            margin: auto;
+            color: $textColorLight;
+            padding-top: 10px;
+
+
+            .fa {
+                display: block;
+                margin: auto;
+                font-size: 40px;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+                width: 40px;
+
+                &.gowith {
+                    width: 80px;
+                }
+            }
+
+            h3 {
+                text-align: center;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            }
+
+            p {
+                font-size: 17px;
+                width: 70%;
+                margin: auto;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            }
+
+            div {
+                min-height: 170px;
+                &:after {
+                    display: block;
+                    content: "\f105";
+                    font-size: 56px;
+                    font-family: FontAwesome;
+                    top: 50%;
+                    position: absolute;
+                    margin-top: -30px;
+                    left: 0;
+                }
+            }
+
+            div:first-child {
+                &:after {
+                    display: none;
+                }
+
+            }
+
         }
     }
 

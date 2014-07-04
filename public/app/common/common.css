@@ -4,14 +4,22 @@ html {
   overflow-x: hidden; }
 
 body {
-  background-color: #fffff7;
-  font-family: 'Lato', sans-serif;
+  background-color: #fdfdfd;
+  font-family: 'Lato', Arial, sans-serif;
   color: #1b1b1b;
   font-size: 17px;
   position: relative;
   min-height: 100%; }
   body .clearfix {
     clear: both; }
+  body .content-box {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px; }
   body .wrapper {
     width: 100%;
     margin: auto;
@@ -41,6 +49,64 @@ body {
           body .wrapper nav ul li.selected {
             border-top: solid 3px #a51000;
             background-color: #292d3e; }
+    body .wrapper .hero {
+      background-color: #292d3e;
+      background-image: url("/assets/images/2.JPG");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 20%;
+      height: 400px;
+      margin: auto;
+      margin-bottom: 20px;
+      position: relative;
+      border: solid 1px transparent; }
+      body .wrapper .hero header {
+        margin-top: 20px;
+        text-align: left;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+        margin-left: 20px;
+        color: #fffff7; }
+        body .wrapper .hero header h2 {
+          font-size: 25px;
+          margin-top: 15px;
+          margin-left: 5px; }
+    body .wrapper .walkthrough {
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      box-shadow: 0px -3px 22px rgba(0, 0, 0, 0.4);
+      margin: auto;
+      color: #fffff7;
+      padding-top: 10px; }
+      body .wrapper .walkthrough .fa {
+        display: block;
+        margin: auto;
+        font-size: 40px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        width: 40px; }
+        body .wrapper .walkthrough .fa.gowith {
+          width: 80px; }
+      body .wrapper .walkthrough h3 {
+        text-align: center;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+      body .wrapper .walkthrough p {
+        font-size: 17px;
+        width: 70%;
+        margin: auto;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+      body .wrapper .walkthrough div {
+        min-height: 170px; }
+        body .wrapper .walkthrough div:after {
+          display: block;
+          content: "\f105";
+          font-size: 56px;
+          font-family: FontAwesome;
+          top: 50%;
+          position: absolute;
+          margin-top: -30px;
+          left: 0; }
+      body .wrapper .walkthrough div:first-child:after {
+        display: none; }
   body .footer {
     width: 100%;
     bottom: 0;

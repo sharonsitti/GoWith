@@ -2,24 +2,16 @@ var express = require('express'),
     path = require('path'),
     app = express(),
     env = process.env.NODE_ENV = process.env.NODE_ENV || 'development',
+    config = require('./server/config/config')[env],
     rootPath = path.normalize(__dirname + '/public'),
-    appPath = rootPath +"/app";
-
+    appPath = rootPath + "/app";
+    app.path = appPath;
     app.use(express.static(appPath));
 
-    // Every http request that's made is handled by this route. Deliver index page for requests I don't have an existing route for.
+require('./server/config/express')(app, config);
+require('./server/config/mongoose')(config);
+require('./server/config/passport')();
+require('./server/config/routes')(app);
 
-    app.get('/', function(req, res) {
-        res.sendfile(appPath + '/index.html');
-    });
-
-    app.get('/events', function(req, res) {
-        res.sendfile(appPath + '/index.html');
-    });
-
-    app.get('/event', function(req, res) {
-        res.sendfile(appPath + '/index.html');
-    });
-
-app.listen(3000);
-console.log('Listening on port', 3000);
+app.listen(config.port);
+console.log('Listening on port', config.port);

@@ -1,98 +1,26 @@
 @import "../common/variables";
 
 .main {
-    .hero {
-        background-color: $navSelectedBgColor;
-        background-image: url('/assets/images/2.JPG');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 20%;
-        height: 300px;
-        margin: auto;
-
-        header {
-            margin-top: 90px;
-            text-align: left;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
-            margin-left: 20px;
-            color: $textColorLight;
-
-            h1 {
-                font-size: 35px;
-                margin: 0 0 5px 0;
-            }
-
-            h2 {
-                font-size: 22px;
-                margin: 0;
-            }
-
-            button {
-                margin-top: 10px;
-            }
-        }
-
-    }
-
-    .walkthrough {
-        background-color: $btnBgColor;
-        margin: auto;
-        color: $textColorLight;
-        padding: 10px 0 10px 0;
-        box-shadow: 0px -4px 18px rgba(0, 0, 0, 0.5);
-
-        .fa {
-            display: block;
-            margin: auto;
-            font-size: 40px;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-            width: 40px;
-
-            &.gowith {
-                width: 80px;
-            }
-        }
-
-        h3 {
-            text-align: center;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-        }
-
-        p {
-            font-size: 17px;
-            width: 70%;
-            margin: auto;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-        }
-
-        div {
-            min-height: 170px;
-            &:after {
-                display: block;
-                content: "\f105";
-                font-size: 56px;
-                font-family: FontAwesome;
-                top: 50%;
-                position: absolute;
-                margin-top: -30px;
-                left: 0;
-            }
-        }
-
-        div:first-child {
-            &:after {
-                display: none;
-            }
-
-        }
-
-    }
 
     .discovery {
         background-color: $textColorLight;
         margin: auto;
-        padding-top: 20px;
 
+        .thumbnail {
+            img {
+                max-height: 160px;
+                width: 100%;
+            }
+
+            h3 {
+                @include text-ellipsis();
+            }
+
+            p {
+                max-height: 50px;
+                overflow: hidden;
+            }
+        }
     }
 
     .search {

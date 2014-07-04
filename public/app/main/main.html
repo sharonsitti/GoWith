@@ -1,95 +1,25 @@
 
-
-    <section class="hero row">
-        <div class="imgContainer col-md-12">
-            <header>
-                <h1>GoWith</h1>
-                <h2>Never miss out on anything just because you're flying solo!</h2>
-
-                <button class="btn btn-primary">Lean More</button>
-            </header>
-        </div>
-    </section>
-    <section class="walkthrough row">
-        <div class="col-md-4">
-            <i class="fa fa-search"></i>
-            <h3>Find an Event</h3>
-
-            <p>Don't sit around and sulk! Find a fun event you'd like to attend, or create your own.</p>
-        </div>
-        <div class="col-md-4">
-            <i class="fa fa-users"></i>
-            <h3>Join Group</h3>
-
-            <p>Join others who would like to attend this event, but don't have anyone to go with - just like
-                you!</p>
-        </div>
-        <div class="col-md-4">
-            <span class="fa gowith">GW</span>
-            <h3>Go With</h3>
-
-            <p>Set up a meeting place and time, and enjoy the event with your new found buddies. Don't forget to
-                show up :)</p>
-        </div>
-    </section>
-
     <section class="discovery row">
         <div class="col-md-12 column">
             <div class="row">
-                <div class="col-md-4">
+                <div ng-repeat="event in events"  class="col-md-4">
                     <div class="thumbnail">
-                        <img alt="300x200" src="https://scontent-a-fra.xx.fbcdn.net/hphotos-xfp1/t31.0-8/p526x296/10369026_275828389264689_5181033909488557354_o.jpg">
+                        <img src="{{event.cover}}">
 
                         <div class="caption">
-                            <h3>Block Party</h3>
-                            <h5>1/1/2015 22:00 @ The Block, Tel Aviv</h5>
+                            <h3>{{event.title}}</h3>
+                            <h5>{{event.date | date:'medium'}} @ {{event.location}}</h5>
 
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>{{event.description}}</p>
 
-                            <p><a class="btn btn-primary" href="/event">GO WITH 2 OTHERS</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img alt="300x200" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/p526x296/10295326_689060551131698_4966118963348950388_o.jpg">
-
-                        <div class="caption">
-                            <h3>Standup Comedy</h3>
-                            <h5>1/1/2015 22:00 @ Ozen Bar, Tel Aviv</h5>
-
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                            <p><a class="btn btn-primary" href="#">GO WITH 1 OTHER</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img alt="300x200" src="http://lorempixel.com/500/200/people">
-
-                        <div class="caption">
-                            <h3>Poerty & Coffee</h3>
-                            <h5>1/1/2015 14:00 @ The Little Prince, Tel Aviv</h5>
-
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                            <p><a class="btn btn-primary" href="#">BE THE FIRST TO GO</a>
+                            <a class="btn btn-primary" href="/event/{{event.id}}">GO WITH {{event.attendees.length}} OTHERS</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="search">
-        <i class="fa fa-coffee"></i>
-        <h4>Not your cup of tea?</h4>
-        <a href="/events">Check out the full event list</a>
 
-    </section>
     <section class="feedback">
         <form action="">
             <h3>Your Feedback is Appreciated</h3>
